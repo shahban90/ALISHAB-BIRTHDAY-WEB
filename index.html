@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Alishaba 🎂💗</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:linear-gradient(135deg,#16001f,#3b0754,#16001f);
+    color:white;
+    overflow-x:hidden;
+}
+
+/* Floating Hearts */
+.heart{
+    position:fixed;
+    bottom:-30px;
+    font-size:20px;
+    animation:float 7s linear infinite;
+    opacity:.7;
+    pointer-events:none;
+    z-index:0;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0) rotate(0);
+        opacity:0;
+    }
+    20%{opacity:.8;}
+    100%{
+        transform:translateY(-110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* HERO */
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:30px 20px;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:850px;
+}
+
+.badge{
+    display:inline-block;
+    padding:10px 20px;
+    border-radius:50px;
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.2);
+    backdrop-filter:blur(10px);
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+    50%{transform:scale(1.06);}
+}
+
+.hero h1{
+    font-size:clamp(45px,10vw,90px);
+    margin:25px 0 10px;
+    background:linear-gradient(90deg,#ff70b7,#fff,#d77bff);
+    -webkit-background-clip:text;
+    color:transparent;
+    animation:shine 3s infinite;
+}
+
+@keyframes shine{
+    50%{filter:drop-shadow(0 0 20px #ff48ad);}
+}
+
+.hero h2{
+    font-size:clamp(22px,5vw,40px);
+    margin-bottom:20px;
+}
+
+.hero p{
+    color:#f5d8ff;
+    font-size:18px;
+    line-height:1.7;
+}
+
+.btn{
+    display:inline-block;
+    margin:25px 8px 0;
+    padding:14px 25px;
+    border-radius:40px;
+    border:none;
+    background:linear-gradient(90deg,#ff3f9f,#a946ff);
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    text-decoration:none;
+    box-shadow:0 8px 30px rgba(255,60,170,.3);
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-5px) scale(1.04);
+}
+
+/* Sections */
+section{
+    padding:90px 20px;
+    position:relative;
+    z-index:1;
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+}
+
+.title{
+    text-align:center;
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.subtitle{
+    text-align:center;
+    color:#ddb9ea;
+    margin-bottom:45px;
+}
+
+/* Countdown */
+.countdown{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    max-width:700px;
+    margin:35px auto;
+}
+
+.time-box{
+    padding:25px 10px;
+    border-radius:20px;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.12);
+    backdrop-filter:blur(12px);
+    text-align:center;
+}
+
+.time-box span{
+    display:block;
+    font-size:38px;
+    font-weight:bold;
+    color:#ff83c5;
+}
+
+.time-box small{
+    color:#dcbde6;
+}
+
+/* Cards */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.card{
+    padding:30px 22px;
+    border-radius:25px;
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.1);
+    backdrop-filter:blur(12px);
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px) rotate(1deg);
+    box-shadow:0 20px 50px rgba(255,0,160,.15);
+}
+
+.card .emoji{
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    color:#ff8ac9;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#e8d4ef;
+    line-height:1.7;
+}
+
+/* Roast */
+.roast-box{
+    max-width:700px;
+    margin:auto;
+    text-align:center;
+    padding:40px 25px;
+    border-radius:30px;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.12);
+}
+
+#roastText{
+    min-height:80px;
+    font-size:22px;
+    line-height:1.6;
+    color:#ffe0f3;
+}
+
+/* Game */
+.game{
+    max-width:700px;
+    margin:auto;
+    text-align:center;
+    padding:35px 20px;
+    border-radius:30px;
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.12);
+}
+
+.game-question{
+    font-size:24px;
+    margin:20px 0;
+}
+
+.answers{
+    display:grid;
+    gap:12px;
+    max-width:500px;
+    margin:auto;
+}
+
+.answer{
+    padding:14px;
+    border:none;
+    border-radius:15px;
+    background:#321040;
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+    transition:.25s;
+}
+
+.answer:hover{
+    background:#ff3d9d;
+    transform:scale(1.03);
+}
+
+#gameResult{
+    margin-top:20px;
+    font-size:20px;
+    min-height:30px;
+}
+
+/* Love letter */
+.letter{
+    max-width:750px;
+    margin:auto;
+    padding:40px;
+    border-radius:30px;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.13);
+    line-height:1.9;
+    color:#f5defa;
+    font-size:18px;
+    text-align:center;
+}
+
+.signature{
+    margin-top:25px;
+    color:#ff8cc9;
+    font-size:23px;
+    font-weight:bold;
+}
+
+/* Surprise */
+.surprise{
+    text-align:center;
+}
+
+#surpriseMessage{
+    display:none;
+    max-width:700px;
+    margin:30px auto 0;
+    padding:30px;
+    border-radius:25px;
+    background:linear-gradient(135deg,#ff3e9e33,#a83eff33);
+    border:1px solid #ff7dc0;
+    font-size:22px;
+    line-height:1.7;
+    animation:pop .6s ease;
+}
+
+@keyframes pop{
+    from{
+        transform:scale(.5);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+footer{
+    text-align:center;
+    padding:35px 20px;
+    color:#c9a7d4;
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+/* Mobile */
+@media(max-width:700px){
+    .countdown{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .title{
+        font-size:34px;
+    }
+
+    .letter{
+        padding:25px 18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Floating Hearts -->
+<div class="heart" style="left:5%;animation-delay:0s;">💗</div>
+<div class="heart" style="left:18%;animation-delay:2s;">💕</div>
+<div class="heart" style="left:35%;animation-delay:4s;">💖</div>
+<div class="heart" style="left:55%;animation-delay:1s;">💜</div>
+<div class="heart" style="left:75%;animation-delay:3s;">💗</div>
+<div class="heart" style="left:90%;animation-delay:5s;">💕</div>
+
+<!-- HERO -->
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="badge">🎀 A Special Birthday Surprise 🎀</div>
+
+<h1>Alishaba 💗</h1>
+
+<h2>Happy Birthday, Annu / Anaya! 🎂✨</h2>
+
+<p>
+28 January 2027 isn't just another date...<br>
+It's the day someone very special came into this world. 🥹💖
+</p>
+
+<a href="#countdown" class="btn">🎂 Birthday Countdown</a>
+<a href="#game" class="btn">🎮 Play Game</a>
+
+</div>
+
+</section>
+
+
+<!-- COUNTDOWN -->
+<section id="countdown">
+
+<div class="container">
+
+<h2 class="title">🎂 Birthday Countdown</h2>
+
+<p class="subtitle">
+Waiting for the most special day of the year...
+</p>
+
+<div class="countdown">
+
+<div class="time-box">
+<span id="days">0</span>
+<small>Days</small>
+</div>
+
+<div class="time-box">
+<span id="hours">0</span>
+<small>Hours</small>
+</div>
+
+<div class="time-box">
+<span id="minutes">0</span>
+<small>Minutes</small>
+</div>
+
+<div class="time-box">
+<span id="seconds">0</span>
+<small>Seconds</small>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FRIENDSHIP -->
+<section>
+
+<div class="container">
+
+<h2 class="title">💗 Why You're Special</h2>
+
+<p class="subtitle">From Shahban, with a little bit of craziness 😂</p>
+
+<div class="cards">
+
+<div class="card">
+<div class="emoji">🌸</div>
+<h3>Beautiful Soul</h3>
+<p>
+Tumhari sab se achi baat tumhara dil hai.
+Tumhari smile aur tumhari vibes dono hi dangerous hain. 😂💗
+</p>
+</div>
+
+<div class="card">
+<div class="emoji">😂</div>
+<h3>Certified Pagal</h3>
+<p>
+Kabhi Annu, kabhi Anaya aur kabhi Alishaba...
+Naam teen, drama unlimited! 😭😂
+</p>
+</div>
+
+<div class="card">
+<div class="emoji">🫶</div>
+<h3>Best Friend</h3>
+<p>
+Life mein kuch log accidentally milte hain,
+lekin phir woh memories ka permanent part ban jate hain. 💕
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ROAST -->
+<section>
+
+<div class="container">
+
+<h2 class="title">🔥 Shahban's Friendly Roast</h2>
+
+<p class="subtitle">
+Warning: Sirf birthday wali cute roasting 😂
+</p>
+
+<div class="roast-box">
+
+<div id="roastText">
+Click the button if you dare... 😈
+</div>
+
+<button class="btn" onclick="newRoast()">
+🔥 Roast Annu
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- GAME -->
+<section id="game">
+
+<div class="container">
+
+<h2 class="title">🎮 Shahban × Alishaba Game</h2>
+
+<p class="subtitle">
+Let's see how well you know your crazy best friend 😏
+</p>
+
+<div class="game">
+
+<div id="score">
+Score: 0 / 5
+</div>
+
+<div class="game-question" id="question">
+Question loading...
+</div>
+
+<div class="answers" id="answers"></div>
+
+<div id="gameResult"></div>
+
+<button class="btn" id="nextBtn" onclick="nextQuestion()" style="display:none;">
+Next Question ➜
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- LETTER -->
+<section>
+
+<div class="container">
+
+<h2 class="title">💌 A Little Message</h2>
+
+<div class="letter">
+
+<p>
+Dear <b>Alishaba / Annu / Anaya</b> 💗
+</p>
+
+<br>
+
+<p>
+I don't know whether I should call you Alishaba,
+Annu or Anaya because apparently one name
+wasn't enough for you. 😂
+</p>
+
+<p>
+But one thing is certain:
+you are one of those people who make life
+a little more fun, a little more crazy,
+and a lot more memorable. 🫶
+</p>
+
+<p>
+On your birthday, I just want to say...
+stay the same crazy, funny and beautiful person
+you are.
+</p>
+
+<p>
+May this new year of your life bring you
+lots of happiness, success, smiles,
+and moments you'll never forget. ✨
+</p>
+
+<div class="signature">
+— Shahban ❤️
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SURPRISE -->
+<section>
+
+<div class="container surprise">
+
+<h2 class="title">🎁 One Last Surprise</h2>
+
+<p class="subtitle">
+Don't click unless you're ready... 👀
+</p>
+
+<button class="btn" onclick="showSurprise()">
+🎁 Open Surprise
+</button>
+
+<div id="surpriseMessage">
+
+🎉 HAPPY BIRTHDAY ALISHABA! 🎉
+
+<br><br>
+
+28 January 2027 💗
+
+<br><br>
+
+You officially survived another year
+of being absolutely amazing...
+and Shahban officially survived
+another year of your drama. 😂😭
+
+<br><br>
+
+Stay happy. Stay crazy.
+And don't ever lose that smile. 🥹💕
+
+<br><br>
+
+<strong>Happy Birthday, Annu / Anaya! 🎂💖</strong>
+
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+Made with ❤️ by <b>Shahban</b><br>
+For the one and only <b>Alishaba</b> 🎀
+
+</footer>
+
+
+<script>
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+const birthday = new Date("January 28, 2027 00:00:00").getTime();
+
+function countdown(){
+
+    const now = new Date().getTime();
+    const distance = birthday - now;
+
+    if(distance <= 0){
+
+        document.getElementById("days").innerText = "🎂";
+        document.getElementById("hours").innerText = "🎉";
+        document.getElementById("minutes").innerText = "💗";
+        document.getElementById("seconds").innerText = "🥳";
+
+        return;
+    }
+
+    const days = Math.floor(distance/(1000*60*60*24));
+    const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+    const minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+    const seconds = Math.floor((distance%(1000*60))/1000);
+
+    document.getElementById("days").innerText = days;
+    document.getElementById("hours").innerText = hours;
+    document.getElementById("minutes").innerText = minutes;
+    document.getElementById("seconds").innerText = seconds;
+}
+
+countdown();
+setInterval(countdown,1000);
+
+
+/* =========================
+   ROAST
+========================= */
+
+const roasts = [
+
+"Alishaba ke teen naam hain... lekin attitude chaar logon jitna hai 😂🔥",
+
+"Annu online ho to peace offline ho jata hai. 😭😂",
+
+"Anaya ka mood samajhna NASA mission se bhi mushkil hai. 🚀😂",
+
+"Alishaba: Main bilkul innocent hoon. Also Alishaba: 👀😂",
+
+"Shahban ko lagta tha life simple hai... phir Annu mili. 😭",
+
+"Teen naam, unlimited drama, zero warranty. 😂💀",
+
+"Birthday girl ko roast nahi karna chahiye... lekin tumne khud ye button dabaya hai. 😂🔥",
+
+"Anaya ki smile cute hai... lekin uske nakhre premium version hain. 😂💅",
+
+"Alishaba ek limited edition hai... thankfully limited quantity mein hi hai. 😂❤️"
+
+];
+
+function newRoast(){
+
+    const random = Math.floor(Math.random()*roasts.length);
+
+    document.getElementById("roastText").innerText =
+        roasts[random];
+
+}
+
+
+/* =========================
+   GAME
+========================= */
+
+const questions = [
+
+{
+q:"Shahban ke according Alishaba kya hai?",
+a:[
+"Normal 😇",
+"Pagal 😂",
+"Super Pagal 🤣",
+"NASA Scientist 🚀"
+],
+correct:2
+},
+
+{
+q:"Alishaba ke kitne famous names hain?",
+a:[
+"1",
+"2",
+"3",
+"Too many 😂"
+],
+correct:2
+},
+
+{
+q:"Birthday kis date ko hai?",
+a:[
+"14 February",
+"28 January",
+"1 January",
+"31 December"
+],
+correct:1
+},
+
+{
+q:"Shahban aur Alishaba ki friendship ka level?",
+a:[
+"Normal",
+"Good",
+"Besties ❤️",
+"Legendary 😂🔥"
+],
+correct:3
+},
+
+{
+q:"Birthday girl ko sab se zyada kya milna chahiye?",
+a:[
+"Homework 😭",
+"Stress",
+"Happiness & Cake 🎂",
+"More Drama 😂"
+],
+correct:2
+}
+
+];
+
+let current = 0;
+let score = 0;
+
+function loadQuestion(){
+
+    const q = questions[current];
+
+    document.getElementById("question").innerText =
+        q.q;
+
+    const answers = document.getElementById("answers");
+
+    answers.innerHTML = "";
+
+    q.a.forEach((answer,index)=>{
+
+        const button = document.createElement("button");
+
+        button.className = "answer";
+
+        button.innerText = answer;
+
+        button.onclick = function(){
+
+            checkAnswer(index);
+
+        };
+
+        answers.appendChild(button);
+
+    });
+
+    document.getElementById("gameResult").innerText = "";
+
+    document.getElementById("nextBtn").style.display="none";
+
+    document.getElementById("score").innerText =
+        "Score: "+score+" / 5";
+}
+
+function checkAnswer(index){
+
+    const q = questions[current];
+
+    const buttons = document.querySelectorAll(".answer");
+
+    buttons.forEach(button=>{
+        button.disabled = true;
+    });
+
+    if(index === q.correct){
+
+        score++;
+
+        document.getElementById("gameResult").innerText =
+            "Correct! 😍🔥 Shahban approves! ❤️";
+
+    }else{
+
+        document.getElementById("gameResult").innerText =
+            "Wrong! 😭😂 Try the next one!";
+
+    }
+
+    document.getElementById("score").innerText =
+        "Score: "+score+" / 5";
+
+    document.getElementById("nextBtn").style.display="inline-block";
+
+}
+
+function nextQuestion(){
+
+    current++;
+
+    if(current >= questions.length){
+
+        document.getElementById("question").innerText =
+            "🎉 Game Complete! 🎉";
+
+        document.getElementById("answers").innerHTML =
+            "<div style='font-size:30px'>❤️ "+score+" / 5 ❤️</div>";
+
+        document.getElementById("gameResult").innerText =
+            score === 5
+            ? "Perfect! Alishaba aur Shahban ki friendship officially legendary hai! 🥹🔥"
+            : "Not bad! Lekin Alishaba ko aur study karni paregi 😂❤️";
+
+        document.getElementById("nextBtn").style.display="none";
+
+        return;
+    }
+
+    loadQuestion();
+}
+
+loadQuestion();
+
+
+/* =========================
+   SURPRISE
+========================= */
+
+function showSurprise(){
+
+    const message =
+        document.getElementById("surpriseMessage");
+
+    message.style.display = "block";
+
+    for(let i=0;i<25;i++){
+
+        const heart = document.createElement("div");
+
+        heart.innerText =
+            ["💗","💖","💕","✨","🎉"][Math.floor(Math.random()*5)];
+
+        heart.style.position="fixed";
+        heart.style.left=Math.random()*100+"vw";
+        heart.style.top=Math.random()*100+"vh";
+        heart.style.fontSize=(20+Math.random()*25)+"px";
+        heart.style.zIndex="999";
+        heart.style.pointerEvents="none";
+        heart.style.animation="pop .7s ease";
+
+        document.body.appendChild(heart);
+
+        setTimeout(()=>{
+            heart.remove();
+        },1500);
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
